@@ -5,16 +5,17 @@ const ArticleSchema = new Schema({
   title: { type: String, required: true, minlength: 3, maxlength: 255 },
   slug: { type: String, required: true, minlength: 3, maxlength: 255, unique: true },
   image: { type: String, required: true },
-  excerpt: {type: String, required: true, maxlength: 150},
   author: {
     name: {type: String, required: true, minlength: 3, maxlength: 200},
-    bio: {type: String, required: true, minlength: 3, maxlength: 500},
     image: { type: String, required: true }
   },
   content: { type: String, required: true, minlength: 3 },
   published_at: {type: Date, default: Date.now},
-  category: { type: String, required: true, enum: ['Restauración', 'General', 'Foodies', 'Promociones y descuentos'] },
-  enabled: { type: Boolean, default: false }
+  category: { type: String, required: true, enum: [] },
+  enabled: { type: Boolean, default: false },
+  positive: {type: Number, default: 0},
+  negative: {type: Number, default: 0},
+  coments: {type: Array}
 })
 
 module.exports = ArticleSchema

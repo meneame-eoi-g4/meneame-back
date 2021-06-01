@@ -1,4 +1,3 @@
-'use strict'
 
 const config = require('./modules/config')
 const app = require('./app')
