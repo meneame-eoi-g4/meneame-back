@@ -1,0 +1,8 @@
+{
+  "name": "meneame-back",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "git@github.com:meneame-eoi-g4/meneame-back.git",
+  "author": "vladikz7 <vladikz@hotmail.com>",
+  "license": "MIT"
+}
