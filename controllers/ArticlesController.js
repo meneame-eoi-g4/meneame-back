@@ -6,6 +6,7 @@ const articleModel = require('../models/ArticleModel')
 const authMiddleware = require('../modules/authenticator')
 const publicAccess = authMiddleware(false, ['user', 'admin'])
 const onlyAdminAccess = authMiddleware(true, ['admin'])
+const onlyUser = authMiddleware(true, ['user'])
 
 router.route('/articles')
   .get(publicAccess, async (req, res) => {
@@ -24,7 +25,7 @@ router.route('/articles')
       res.status(500).json({ message: error.message })
     }
   })
-  .post(onlyAdminAccess, async (req, res) => {
+  .post(onlyUser, async (req, res) => {
     try {
       let newArticle = req.body
 
