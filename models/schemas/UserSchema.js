@@ -6,6 +6,7 @@ let userSchema = new Schema({
   email: { type: String, required: true, unique: true },
   password: { type: String, required: true, minlength: 6, maxlength: 200 },
   profile: { type: String, required: false, default: 'user' },
+  avatar: {type: String},
   enabled: { type: Boolean, default: true },
   created_at: { type: Date, default: Date.now }
 });
