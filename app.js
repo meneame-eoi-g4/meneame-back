@@ -6,13 +6,13 @@ const cors = require("cors");
 
 //middlewares con las rutas
 const indexController = require('./controllers/IndexController')
-const articleController = require('./controllers/ArticlesController')
+const jobController = require('./controllers/JobsController')
 const messagesController = require('./controllers/MessagesController')
 const usersController = require('./controllers/UsersController')
 const authController = require('./controllers/AuthController')
 
 //server instance
-const app = express()
+const app = express() 
 
 app.use(bearerToken())
 app.use(cors())
@@ -22,7 +22,7 @@ app.use(express.json())
 
 //enganchamos los controladores de los diferentes recursos
 app.use(indexController)
-app.use(articleController)
+app.use(jobController)
 app.use(messagesController)
 app.use(usersController)
 app.use(authController)
