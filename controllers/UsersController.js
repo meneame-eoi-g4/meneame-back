@@ -76,7 +76,7 @@ router.route('/users/:userId')
       const userId = req.params.userId
       const userData = req.body
 
-      if(userId !== req.tokenData._id && req.tokenData.profile === 'user'){
+      if(userId !== req.tokenData._id ){
         res.status(404).json({ message: `Usuario con identificador ${userId} no encontrado.` })
         return
       }
