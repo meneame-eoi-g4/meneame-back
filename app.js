@@ -10,6 +10,7 @@ const jobController = require('./controllers/JobsController')
 const messagesController = require('./controllers/MessagesController')
 const usersController = require('./controllers/UsersController')
 const authController = require('./controllers/AuthController')
+const valorationsController= require('./controllers/ValorationsController')
 
 //server instance
 const app = express() 
@@ -26,6 +27,7 @@ app.use(jobController)
 app.use(messagesController)
 app.use(usersController)
 app.use(authController)
+app.use(valorationsController)
 
 database.connect()
 

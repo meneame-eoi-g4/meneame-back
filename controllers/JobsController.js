@@ -67,7 +67,7 @@ router.route('/jobs/:jobId')
       res.status(500).json({ message: error.message })
     }
   })
-  .delete(onlyAdminAccess, async (req, res) => {
+  .delete( async (req, res) => {
     try {
       const jobId = req.params.jobId
 

@@ -10,7 +10,7 @@ const onlyAdminAccess = authMiddleware(true, ['admin'])
 const userModel = require('../models/UserModel')
 
 router.route('/users')
-  .get(onlyAdminAccess, async (req, res) => {
+  .get( async (req, res) => {
     try {
       const limit = req.query.hasOwnProperty('limit') ? parseInt(req.query.limit) : 50
 
@@ -47,14 +47,14 @@ router.route('/users')
   })
 
 router.route('/users/:userId')
-  .get(onlyRegisteredAccess, async (req, res) => {
+  .get( onlyRegisteredAccess ,async (req, res) => {
     try {
       const userId = req.params.userId
 
-      if(userId !== req.tokenData._id && req.tokenData.profile === 'user'){
+      /* if(userId !== req.tokenData._id && req.tokenData.profile === 'user'){
         res.status(404).json({ message: `Usuario con identificador ${userId} no encontrado.` })
         return
-      }
+      } */
 
       let foundUser = await userModel.findById(userId).exec()
 
